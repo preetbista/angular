@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <title>Flight System</title>
+  <style>
+    .nav-link {
+      transition: all 0.3s ease-in-out;
+    }
+
+    .nav-link:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+  <nav class="bg-blue-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center">
+          <a href="#" class="flex-shrink-0 text-white">
+            <svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="currentColor"/>
+              <path d="M2 17L12 22L22 17V15L12 20L2 15V17Z" fill="currentColor"/>
+              <path d="M2 9L12 14L22 9V7L12 12L2 7V9Z" fill="currentColor"/>
+            </svg>
+          </a>
+          <div class="hidden md:block">
+            <div class="ml-10 flex items-baseline space-x-4">
+              <a href="#" class="nav-link text-white hover:text-gray-200 px-3 py-2 rounded-md text-sm font-medium">Home</a>
+              <a href="#" class="nav-link text-white hover:text-gray-200 px-3 py-2 rounded-md text-sm font-medium">Flights</a>
+              <a href="#" class="nav-link text-white hover:text-gray-200 px-3 py-2 rounded-md text-sm font-medium">Destinations</a>
+              <a href="#" class="nav-link text-white hover:text-gray-200 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+            </div>
+          </div>
+        </div>
+        <div class="hidden md:block">
+          <div class="ml-4 flex items-center md:ml-6">
+            <button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+              Log In
+            </button>
+          </div>
+        </div>
+        <div class="-mr-2 flex md:hidden">
+          <button type="button" class="bg-blue-500 inline-flex items-center justify-center p-2 rounded-md text-white hover:text-gray-200 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-blue-500 focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+            <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="md:hidden" id="mobile-menu">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <a href="#" class="nav-link text-white hover:text-gray-200 block px-3 py-2 rounded-md text-base font-medium">Home</a>
+        <a href="#" class="nav-link text-white hover:text-gray-200 block px-3 py-2 rounded-md text-base font-medium">Flights</a>
+        <a href="#" class="nav-link text-white hover:text-gray-200 block px-3 py-2 rounded-md text-base font-medium">Destinations</a>
+        <a href="#" class="nav-link text-white hover:text-gray-200 block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+      </div>
+      <div class="pt-4 pb-3 border-t border-blue-700">
+        <div class="flex items-center px-5">
+          <div class="ml-3">
+            <div class="text-base font-medium leading-none text-white">Sign in</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <header class="bg-white shadow">
+    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+      <h1 class="text-3xl font-bold leading-tight text-gray-900">
+        Welcome to our Flight System
+      </h1>
+      <p class="mt-2 text-sm text-gray-500">
+        Book your next flight easily and explore amazing destinations.
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+      <div class="px-4 py-6 sm:px-0">
+        <!-- Your content goes here -->
+      </div>
+    </div>
+  </main>
+
+
+  <script>
+    const button = document.querySelector('button[aria-controls="mobile-menu"]');
+    const menu = document.getElementById('mobile-menu');
+
+    button.addEventListener('click', () => {
+      const expanded = button.getAttribute('aria-expanded') === 'true' || false;
+      button.setAttribute('aria-expanded', !expanded);
+      menu.classList.toggle('hidden', expanded);
+    });
+  </script>
+</body>
+</html>
