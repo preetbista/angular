@@ -1,13 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
 nav {
   background-color: #1f2029;
-  overflow-y: hidden;
-  overflow-x: hidden;
+  position: -webkit-sticky;
+  top: 0;
+  position: sticky;
+  padding: 25px;
+  z-index: 9999;
+  backdrop-filter: blur(0.8);
 }
 nav img{
   margin-top: 8px;
   margin-left: 10px;
-  border-radius: 2px;
   width: 50px;
 }
 nav ul{

@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
-import { FormComponent } from './form/form.component';
+import { FormComponent } from './login/login.component';
+import { LoadingComponent } from './loading/loading.component';
 
 @NgModule({
   declarations: [
     HeaderComponent,
-    FormComponent
+    FormComponent,
+    LoadingComponent
 
   ],
   imports: [
@@ -14,7 +16,8 @@ import { FormComponent } from './form/form.component';
   ],
   exports: [
     HeaderComponent,
-    FormComponent
+    FormComponent,
+    LoadingComponent
   ]
 })
 export class UserAuthModule { }
