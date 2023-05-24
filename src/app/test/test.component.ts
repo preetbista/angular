@@ -15,7 +15,7 @@ import { EmployeeService } from '../employee.service';
 export class TestComponent{
  public employees = []
 
- public errorMsg;
+ public errorMsg:string;
  constructor(private _employeeService:EmployeeService){ }
 
  ngOnInit(){
