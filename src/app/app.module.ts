@@ -6,20 +6,25 @@ import { UserAuthModule } from './user-auth/user-auth.module';
 import { AppComponent } from './app.component';
 import { MainModule } from './main/main.module';
 import { TestComponent } from './test/test.component';
+import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
+import { EmployeeService } from './employee.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TestComponent
+    TestComponent,
+    EmployeeDetailComponent
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     UserAuthModule,
-    MainModule
+    MainModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [EmployeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

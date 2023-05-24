@@ -1,36 +1,26 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { EmployeeService } from '../employee.service';
 
 @Component({
   selector: 'app-test',
   template: `
-    <h2>{{name}}</h2>
-    <h2>{{name | lowercase}}</h2>
-    <h2>{{name | uppercase}}</h2>
-    <h2>{{message | titlecase}}</h2>
-    <h2>{{name | slice:3:5}}</h2>
-    <h2>{{person | json}}</h2>
-
-    <h2>{{5.678 | number:'1.2-3'}}</h2>
-    <h2>{{5.678 | number:'3.4-5'}}</h2>
-    <h2>{{5.678 | number:'3.1-2'}}</h2>
-    <h2>{{5.678 | percent}}</h2>
-    <h2>{{5.678 | currency}}</h2>
-
-      <h2>{{date}}</h2>
-      <h2>{{date | date:'short'}}</h2>
-      <h2>{{date | date:'shortTime'}}</h2>
-      <h2>{{date | date:'shortDate'}}</h2>
-
+  <h2>Employee List</h2>
+  <h2>{{errorMsg}}</h2>
+  <ul *ngFor="let employee of employees">
+    <li>{{employee.name}}</li>
+  </ul>
   `,
   styles: []
 })
-export class TestComponent {
-  public name = "Satya";
-  public message = "Welcome to esewa";
-  public person = {
-    "firstName" : "John",
-    "lastName" : "Doe"
-  }
+export class TestComponent{
+ public employees = []
 
-  public date=new Date();
+ public errorMsg;
+ constructor(private _employeeService:EmployeeService){ }
+
+ ngOnInit(){
+     this._employeeService.getEmployees()
+     .subscribe(data => this.employees = data,
+                error => this.errorMsg = error);
+ }
 }
