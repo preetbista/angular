@@ -6,8 +6,7 @@ import { LoadingComponent } from './loading/loading.component';
 
 @NgModule({
   declarations: [
-    HeaderComponent,
-    FormComponent,
+
     LoadingComponent
 
   ],
@@ -15,8 +14,7 @@ import { LoadingComponent } from './loading/loading.component';
     CommonModule
   ],
   exports: [
-    HeaderComponent,
-    FormComponent,
+
     LoadingComponent
   ]
 })

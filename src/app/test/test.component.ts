@@ -12,7 +12,7 @@ import { EmployeeService } from '../employee.service';
   `,
   styles: []
 })
-export class TestComponent{
+export class TestComponent {
  public employees = []
 
  public errorMsg:string;
